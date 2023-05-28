@@ -15,10 +15,12 @@ class Stack {
     this.bottom = null
     this.length = 0
   }
+
   //see the top node:
   peek() {
     return this.top
   }
+
   //add a node to the top:
   push(value) {
     const newNode = new Node(value)
@@ -35,6 +37,7 @@ class Stack {
 
     return this
   }
+
   //remove the top:
   pop() {
     if (!this.length) {
@@ -50,6 +53,7 @@ class Stack {
 
     return this
   }
+
   // check if is empty:
   isEmpty() {
     return !this.length

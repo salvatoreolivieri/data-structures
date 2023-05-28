@@ -1,8 +1,6 @@
-// Stacks: We can create it using Arrays and Linked Lists
+// Stacks:
 
-//google
-//udemy.com
-//youtube
+// Using Linked List
 
 class Node {
   constructor(value) {
@@ -67,3 +65,17 @@ myStack.push("discord")
 myStack.pop()
 myStack.pop()
 myStack.isEmpty()
+
+// Using Arrays
+
+const array = []
+
+const peak = (array) => array[0]
+const isEmpty = (array) => !array.length
+
+array.push("google")
+array.push("discord")
+array.push("udemy")
+peak(array)
+array.pop()
+isEmpty(array)

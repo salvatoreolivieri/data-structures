@@ -107,6 +107,63 @@ class BinarySearchTree {
 
     return this.breadthFirstSearchRecursive(queue, list)
   }
+
+  DFSInorder() {
+    return traverseInOrder(this.root, [])
+  }
+
+  DFSPostorder() {
+    return traversePostOrder(this.root, [])
+  }
+
+  DFSPreorder() {
+    return traversePreOrder(this.root, [])
+  }
+}
+
+const traverseInOrder = (node, list) => {
+  if (node.left) {
+    traverseInOrder(node.left, list)
+  }
+
+  list.push(node.value)
+
+  if (node.right) {
+    traverseInOrder(node.right, list)
+  }
+
+  console.log(list)
+  return list
+}
+
+const traversePreOrder = (node, list) => {
+  list.push(node.value)
+
+  if (node.left) {
+    traversePreOrder(node.left, list)
+  }
+
+  if (node.right) {
+    traversePreOrder(node.right, list)
+  }
+
+  console.log(list)
+  return list
+}
+
+const traversePostOrder = (node, list) => {
+  if (node.left) {
+    traversePostOrder(node.left, list)
+  }
+
+  if (node.right) {
+    traversePostOrder(node.right, list)
+  }
+
+  list.push(node.value)
+
+  console.log(list)
+  return list
 }
 
 const tree = new BinarySearchTree()
@@ -119,7 +176,12 @@ tree.insert(20)
 tree.insert(170)
 tree.insert(15)
 tree.insert(1)
+
 tree.breadthFirstSearch()
 tree.breadthFirstSearchRecursive([tree.root], [])
+
+tree.DFSPostorder()
+tree.DFSPreorder()
+tree.DFSInorder()
 
 console.log(tree)
